@@ -1,95 +1,78 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<title>HTML bLOG</title>
-	
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo Planner</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/aboutposts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/todoRegisterStyle.css">
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/Jquery/lib/jquery.min.js"></script>
+ 
 </head>
 <body>
-<div class="container">
-    <h1 class="mb-4">New Task</h1>
-    <form method="POST">    
-        <div class="form-group">
-            <label for="Title" class="font-weight-bold" >Title</label>
-            <input required  type="text" name="title" id="title" class="form-control width-50">
-          </div>
-          
-          <div class="form-group">
-            <label for="Description" class="font-weight-bold">Description</label>
-            <textarea name="description" id="description" class="form-control" ></textarea>
-            
-          </div>
-          <div class="form-group">
-            <label for="dueDate" class="font-weight-bold">DueDate</label>
-            <input required type="text" name="dueDate"id="dueDate" class="form-control">
-          </div>
-          
-          
-        
-          <div class="form-group">
-          <label class="font-weight-bold"  for="status" >Select the Status</label>
-          <label class="radio-inline">
-            <div class="col-sm-10">
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="rb1" name="status" >
-              <label class="custom-control-label" for="rb1">Complete</label>
-              </div>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Todos</a>
             </div>
-            </label>
-            
-            <label class="radio-inline">
-              <div class="col-sm-10">
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="rb2" name="status" checked>
-              <label class="custom-control-label" for="rb2">Incomplete</label>
-              </div>
-            </div>
-            </label>
         </div>
-              
-           
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
-          <div class="col-sm-10">
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" type="radio" name="priority" id="rb1" >
-              <label class="custom-control-label" for="rb1">
-                High
-              </label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" type="radio" name="priority" id="rb2" checked>
-              <label class="custom-control-label" for="rb2">
-                Medium
-              </label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" type="radio" name="priority" id="rb3" >
-              <label class="custom-control-label" for="rb3">
-                
-              </label>
-            </div>
+    </nav>
+
+
+    <div id="todoForm"  class="container">
+        <h2>Add A task</h2>
+        <!-- Form -->
+        <form method="POST">
+          <div class="js-form-message form-group mb-3">
+            <input type="text" class="form-control" name="title" placeholder="Title" required>
           </div>
-          </fieldset>
-        
-        <div class="form-group">
-          <label class="font-weight-bold"for="Comments">Comments</label>
-          <textarea name="comment" id="comments" class="form-control" ></textarea>
-          </fieldset>
-        </div>
+          <div class="js-form-message form-group mb-3">
+            <textarea class="form-control" rows="5" name="description" placeholder="Todo's description !" 
+                data-msg="Please enter your message."
+                data-error-class="u-has-error"
+                data-success-class="u-has-success"></textarea>
+          </div>
+          <div class="js-form-message form-group mb-3">
+            <input type="date" class="form-control" name="dueDate" placeholder="Due Date" required>
+          </div>
+          <select class="custom-select mb-3" name="priority">
+            <option selected>Priority</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <!-- <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline1" name="xxx" class="custom-control-input">
+            <label class="custom-control-label" name="status" for="customRadioInline1" value="complete">Status Complete</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" name="xxx" class="custom-control-input">
+            <label class="custom-control-label" name="status" for="customRadioInline2" value="incomplete">Status Incomplete</label>
+          </div> -->
+          <div class="js-form-message form-group mb-3">
+            <label class="mr-4">
+            <input type="radio" class="form-check-input" name="status" value="complete">Status complete
+          </label>
+          <label>
+            <input type="radio" class="form-check-input" name="status" value="incomplete">Status incomplete
+          </label>
+          </div>
           
-          <a href="/" class="btn btn-secondary">Cancel</a>
-          <button type="submit" class="btn btn-primary">Save</button>
-    </form>
-</div>
+          <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-primary btn-wide transition-3d-hover">Add Todo</button>
+          </div>
+        </form>
+    </div>
+
+<script type="text/javascript" src="/Jquery/aboutposts.js"></script>
 </body>
 </html>
-
-
-
                     

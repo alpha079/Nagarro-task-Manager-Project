@@ -26,7 +26,7 @@ const Todos = db.define('todo',{
     Status:{
         type : Sequelize.STRING(10),
         allowNull : false,
-        defaultValue : "Incomplete"
+        defaultValue : 'Incomplete'
         
     },
     Priority:{
@@ -35,10 +35,10 @@ const Todos = db.define('todo',{
         defaultValue : "Incomplete"
         
     },
-    Notes:{
-        type : Sequelize.STRING(30),
-        allowNull : true
-    }
+    //Notes:{
+      //  type : Sequelize.STRING(30),
+     //   allowNull : true
+   // }
 })
 //db.sync()
 //.then(()=> {

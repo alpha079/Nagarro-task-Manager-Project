@@ -6,7 +6,7 @@ const methodOverride = require('method-override')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.set("view engine","ejs");
-
+var PORT = process.env.PORT || 3000
 
 app.use(methodOverride('_method'));
 app.get('/',async(req,res)=>{
@@ -34,7 +34,7 @@ app.patch('/:id', async(req, res) => {
 
 db.sync()
 .then(() => {
-    app.listen(3000)
+    app.listen(PORT)
 }).catch((err) => {
     console.error(err)
 })

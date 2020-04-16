@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <title>Task And Notes Manager </title>
+    <script src="sorting.js"></script>
   </head>
 <body>
     <div class="container">
@@ -18,7 +19,10 @@
     
 
     
-        <a href="todo/new "class="btn btn-success mb-3 ">Add New Task</a>
+        <a href="todo/new "class="btn btn-success mb-3 mr-20 ">Add New Task</a>
+        <a href="/ "class="btn btn-warning  float-right  ">Sort By Date</a>
+        <a href="/ "class="btn btn-primary float-right ml-2  mr-3 "  onclick="addTask()" >Sort By Priority</a>
+        <a href="/ "class="btn btn-info float-right ml-2  mr-2 ">Sort By Status</a>
         <div class="d-flex justify-content-between flex-wrap ">
             <% todos.forEach(todo => { %>
             <div class="card text-white bg-secondary mb-3"> 
@@ -27,6 +31,7 @@
                   <h5 class="card-date"><%= todo.DueDate.toLocaleDateString() %></h5>
                   <p class="card-text"><%= todo.Description.substring(0,25) %></p>
                   <a href="/<%=todo.id%>" class="btn btn-primary">Read More</a>
+                  <a href="/<%=todo.id%>" class="btn btn-primary" >Add Notes</a>
                 </div>
                 <div class="card-footer bg-transparent border-primary">Status: <%= todo.Status%></div>
               </div>

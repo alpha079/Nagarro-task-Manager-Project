@@ -21,7 +21,8 @@ const Todos = db.define('todo',{
     },
     DueDate:{
         type : Sequelize.DATE,
-        allowNull : false
+        allowNull : false,
+        
     },
     Status:{
         type : Sequelize.STRING(10),

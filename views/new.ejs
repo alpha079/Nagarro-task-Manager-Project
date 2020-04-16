@@ -43,10 +43,10 @@
           <div class="js-form-message form-group mb-3">
             <input type="date" class="form-control" name="dueDate" placeholder="Due Date" required>
           </div>
-          <select class="custom-select mb-3" name="priority">
-            <option selected>Priority</option>
+          <select class="custom-select mb-3" name="priority" required>
+            <option >Priority</option>
             <option value="high">High</option>
-            <option value="medium">Medium</option>
+            <option  selected value="medium">Medium</option>
             <option value="low">Low</option>
           </select>
           <!-- <div class="custom-control custom-radio custom-control-inline">
@@ -74,6 +74,7 @@
           <div class="d-flex justify-content-center mt-3">
             <button type="submit" class="btn btn-primary btn-wide transition-3d-hover">Add Task</button>
           </div>
+          
         </form>
     </div>
 

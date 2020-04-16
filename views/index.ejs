@@ -18,16 +18,17 @@
     
 
     
-        <a href="todo/new "class="btn btn-success">Add New Task</a>
-        <div class="d-flex justify-content-between flex-wrap">
+        <a href="todo/new "class="btn btn-success mb-3 ">Add New Task</a>
+        <div class="d-flex justify-content-between flex-wrap ">
             <% todos.forEach(todo => { %>
-            <div class="card border-dark mb-3 mt-4">
+            <div class="card text-white bg-secondary mb-3"> 
                 <div class="card-header bg-transparent border-primary"><%= todo.Title%></div>
                 <div class="card-body">
                   <h5 class="card-date"><%= todo.DueDate.toLocaleDateString() %></h5>
                   <p class="card-text"><%= todo.Description.substring(0,25) %></p>
                   <a href="/<%=todo.id%>" class="btn btn-primary">Read More</a>
                 </div>
+                <div class="card-footer bg-transparent border-primary">Status: <%= todo.Status%></div>
               </div>
 
         <%}); %>

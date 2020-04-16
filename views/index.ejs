@@ -1,33 +1,40 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>HTML bLOG</title>
-	
-</head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/s/style.css">
+    <title>Task and Notes Manager</title>
+  </head>
 <body>
-<div class="container">
-    <h1 class="mb-4">
+    <div class="container">
+    <h2 class="mb-4" style="text-align: center">
         Task And Notes Manager 
-    </h1>
-        <a href="todo/new "class="btn btn-success">Add New Task</a>
+    </h2>
+    
 
+    
+        <a href="todo/new "class="btn btn-success">Add New Task</a>
+        <div class="d-flex flex-wrap">
+            
+          </div>
         <% todos.forEach(todo => { %>
-            <div class="card mt-4">
+            <div class="card border-dark mb-3 mt-4" style="max-width: 18rem;">
+                <div class="card-header bg-transparent border-primary"><%= todo.Title%></div>
                 <div class="card-body">
-                    <h4 class="card-title"><%= todo.Title%></h4>
-                <div class="card-subtitle text-muted mb-2"><%= todo.DueDate.toLocaleDateString() %></div>
-                <div class="card-text mb-2"><%= todo.Description %></div>
-                <a href="/<%=todo.id%>" class="btn btn-primary">Read More</a>
+                  <h5 class="card-date"><%= todo.DueDate.toLocaleDateString() %></h5>
+                  <p class="card-text"><%= todo.Description %></p>
+                  <a href="/<%=todo.id%>" class="btn btn-primary">Read More</a>
                 </div>
-                
-            </div>
+              </div>
 
         <%}); %>
+       
+    </div>
 </div>
 </body>
 </html>

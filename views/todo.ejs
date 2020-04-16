@@ -85,6 +85,12 @@
             </label>
             </div>
             <%}%>
+            <div class="js-form-message form-group mb-3">
+              <textarea class="form-control" rows="5" name="notes" placeholder="Todo's Notes !" 
+                  data-msg="Please enter your message."
+                  data-error-class="u-has-error"
+                  data-success-class="u-has-success"><%=todo.Notes%></textarea>
+            </div>
           <div class="d-flex justify-content-center mt-3">
             <button type="submit" class="btn btn-primary btn-wide transition-3d-hover">Save Todo</button>
           </div>

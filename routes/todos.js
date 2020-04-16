@@ -16,7 +16,7 @@ router.post('/new',async(req,res) => {
         DueDate: req.body.dueDate,
         Status: req.body.status,
         Priority: req.body.priority,
-        Notes: req.body.comment
+        Notes: req.body.notes
     })
     await task.save();
     res.redirect('/');

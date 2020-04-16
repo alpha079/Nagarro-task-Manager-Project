@@ -27,6 +27,7 @@ app.patch('/:id', async(req, res) => {
         todo.DueDate = req.body.dueDate
         todo.Priority = req.body.priority
         todo.Status = req.body.status
+        todo.Notes = req.body.notes
      await todo.save();
      res.redirect('/')
 })
